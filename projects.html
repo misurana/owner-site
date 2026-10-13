@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -78,12 +78,9 @@
       </a>
       
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html"><i class="fa-solid fa-store" style="font-size:9px; margin-right:4px;"></i> Store</a></li>
-        <li><a href="profile.html#hero">Home</a></li>
-        <li><a href="profile.html#experience">Career</a></li>
+        <li><a href="index.html">Career</a></li>
         <li><a href="#projects" class="active">Projects</a></li>
-        <li><a href="profile.html#book">My Book</a></li>
-        <li><a href="profile.html#resume">Resume</a></li>
+        <li><a href="kuch-bhi.html">My Book</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -387,10 +384,114 @@
   </div>
 
   <!-- Main scripts execution -->
-  <script type="module" src="app.js"></script>
-
-  <!-- Auto-detect script values immediately -->
   <script>
+    // Header scroll background effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (header) {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    });
+
+    // Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          if (navLinks.classList.contains('active')) {
+            icon.classList.remove('bx-menu');
+            icon.classList.add('bx-x');
+          } else {
+            icon.classList.remove('bx-x');
+            icon.classList.add('bx-menu');
+          }
+        }
+      });
+
+      // Close mobile menu on outside click
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+          navLinks.classList.remove('active');
+          const icon = menuToggle.querySelector('i');
+          if (icon) {
+            icon.classList.remove('bx-x');
+            icon.classList.add('bx-menu');
+          }
+        }
+      });
+    }
+
+    // Smooth Scroll for projects link and button
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            // Close mobile menu if open
+            if (navLinks) {
+              navLinks.classList.remove('active');
+              if (menuToggle) {
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                  icon.classList.remove('bx-x');
+                  icon.classList.add('bx-menu');
+                }
+              }
+            }
+            targetEl.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
+      });
+    });
+
+    // Reveal animations on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => observer.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('active'));
+    }
+
+    // Custom Cursor tracking
+    const cursor = document.getElementById('custom-cursor');
+    const cursorFollower = document.getElementById('custom-cursor-follower');
+    if (cursor && cursorFollower) {
+      let mouseX = 0, mouseY = 0;
+      let followerX = 0, followerY = 0;
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      });
+      function animateCursor() {
+        followerX += (mouseX - followerX) * 0.15;
+        followerY += (mouseY - followerY) * 0.15;
+        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0)`;
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    }
+
     // Processor thread detection
     const threads = navigator.hardwareConcurrency || 'N/A';
     const threadsEl = document.getElementById('sys-threads');
