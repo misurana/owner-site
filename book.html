@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuchh Bhi — Hindi Poetry Anthology | Mukesh Rana</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-dim: #7a6030;
+      --cream: #f5efe6;
+      --dark: #060606;
+      --dark2: #0d0d0d;
+      --dark3: #141414;
+      --border: rgba(201, 168, 76, 0.18);
+      --text-sec: rgba(245, 239, 230, 0.55);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    
+    /* Navigation Bar */
+    .nav-bar {
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    
+    .nav-logo {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    
+    .nav-logo span {
+      color: var(--cream);
+    }
+    
+    .nav-actions {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .btn-action {
+      padding: 8px 18px;
+      font-family: 'Syncopate', sans-serif;
+      font-size: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      border-radius: 4px;
+    }
+    
+    .btn-action-primary {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      font-weight: 700;
+    }
+    
+    .btn-action-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+    
+    .btn-action-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid var(--border);
+    }
+    
+    .btn-action-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+    
+    /* Resume Paper Container */
+    .resume-paper {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--dark2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    
+    /* Header Section */
+    .resume-header {
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 25px;
+      margin-bottom: 30px;
+    }
+    
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    
+    .name-title h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--cream);
+      letter-spacing: -0.5px;
+    }
+    
+    .name-title h1 span {
+      font-style: italic;
+      color: var(--gold);
+    }
+    
+    .name-title p {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 8px;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-sec);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .contact-item i {
+      color: var(--gold);
+      width: 14px;
+      text-align: center;
+    }
+    
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-item a:hover {
+      color: var(--gold);
+    }
+    
+    /* Content Layout */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+    }
+    
+    .section-title {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-title i {
+      font-size: 12px;
+    }
+    
+    .resume-block {
+      margin-bottom: 24px;
+    }
+    
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+    
+    .block-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--cream);
+    }
+    
+    .block-subtitle {
+      font-size: 13px;
+      color: var(--gold-light);
+      font-style: italic;
+    }
+    
+    .block-date {
+      font-size: 11px;
+      font-family: 'Syncopate', sans-serif;
+      letter-spacing: 1px;
+      color: var(--text-sec);
+      text-transform: uppercase;
+    }
+    
+    .block-content {
+      font-size: 14px;
+      color: var(--text-sec);
+      list-style-type: none;
+    }
+    
+    .block-content li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    
+    .block-content li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 8px;
+      top: 2px;
+    }
+    
+    .summary-text {
+      font-size: 14px;
+      color: var(--text-sec);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    
+    /* Skills Grid inside Resume Page */
+    .skills-section-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    
+    .skill-category {
+      background: rgba(255, 255, 255, 0.01);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 6px;
+    }
+    
+    .skill-category-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .skill-badge {
+      font-size: 9px;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border: 1px solid rgba(201,168,76,0.18);
+      color: rgba(245,239,230,0.55);
+      text-transform: uppercase;
+      font-family: 'Syncopate', sans-serif;
+      background: rgba(201, 168, 76, 0.02);
+      border-radius: 2px;
+    }
+    
+    /* Responsive styling for screen */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      .nav-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+      .resume-paper {
+        padding: 25px 20px;
+      }
+      .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .resume-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .block-header {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+    
+    /* ── PRINT-SPECIFIC CSS STYLES ── */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111111 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .nav-bar {
+        display: none !important; /* Hide navigation bar on print */
+      }
+      
+      .resume-paper {
+        max-width: 100% !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .resume-header {
+        border-bottom: 2px solid #666666 !important;
+        padding-bottom: 15px !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .name-title h1 {
+        color: #111111 !important;
+        font-size: 28pt !important;
+      }
+      
+      .name-title h1 span {
+        color: #333333 !important;
+      }
+      
+      .name-title p {
+        color: #444444 !important;
+        font-size: 9pt !important;
+      }
+      
+      .contact-grid {
+        margin-top: 15px !important;
+        color: #333333 !important;
+        font-size: 10pt !important;
+      }
+      
+      .contact-item i {
+        color: #444444 !important;
+      }
+      
+      .section-title {
+        color: #111111 !important;
+        font-size: 10pt !important;
+        border-bottom: 1px solid #999999 !important;
+        padding-bottom: 4px !important;
+        margin-bottom: 12px !important;
+        margin-top: 15px !important;
+      }
+      
+      .section-title i {
+        display: none !important; /* Hide icons in headings for a cleaner print look */
+      }
+      
+      .block-title {
+        color: #111111 !important;
+        font-size: 12pt !important;
+      }
+      
+      .block-subtitle {
+        color: #333333 !important;
+        font-size: 10pt !important;
+      }
+      
+      .block-date {
+        color: #444444 !important;
+        font-size: 8pt !important;
+      }
+      
+      .block-content {
+        color: #222222 !important;
+        font-size: 9.5pt !important;
+      }
+      
+      .block-content li::before {
+        color: #444444 !important;
+      }
+      
+      .summary-text {
+        color: #222222 !important;
+        font-size: 9.5pt !important;
+        margin-bottom: 15px !important;
+        line-height: 1.5 !important;
+      }
+      
+      .skill-category {
+        background: none !important;
+        border: 1px solid #cccccc !important;
+        padding: 10px !important;
+        border-radius: 4px !important;
+      }
+      
+      .skill-category-title {
+        color: #111111 !important;
+        font-size: 11pt !important;
+      }
+      
+      .skill-badge {
+        border: 1px solid #bbbbbb !important;
+        background: none !important;
+        color: #333333 !important;
+        font-size: 7.5pt !important;
+        padding: 2px 6px !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- Menu Navigation for Screen -->
+  <div class="nav-bar">
+    <a href="index.html" class="nav-logo">MUKESH<span>RANA</span></a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn-action btn-action-outline"><i class="fa-solid fa-store"></i> Store</a>
+      <a href="profile.html" class="btn-action btn-action-outline"><i class="fa-solid fa-user-tie"></i> Profile</a>
+      <button onclick="window.print()" class="btn-action btn-action-primary"><i class="fa-solid fa-print"></i> Print Book</button>
+      <a href="assets/KUCHH_BHI_BY_MUKESH_RANA.pdf" download="Kuchh_Bhi_by_Mukesh_Rana.pdf" class="btn-action btn-action-outline"><i class="fa-solid fa-download"></i> Download PDF</a>
+    </div>
+  </div>
+
+  <!-- Book Main Document -->
+  <div class="resume-paper">
+    
+    <!-- Book Header -->
+    <div class="resume-header">
+      <div class="header-main">
+        <div class="name-title">
+          <h1>KUCHH <span>BHI</span></h1>
+          <p>Kuchh Bhi (कुछ भी) — Hindi Poetry & Prose Anthology by Misu</p>
+        </div>
+      </div>
+      
+      <!-- Contact Information -->
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:misurana113@gmail.com">misurana113@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+919816912798">+91 98169 12798</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Noida, Uttar Pradesh, India</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-globe"></i>
+          <a href="https://www.1mr.in" target="_blank">www.1mr.in</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://linkedin.com/in/mukesh-rana-8852a219b" target="_blank">linkedin.com/in/mukesh-rana</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/misurana" target="_blank">github.com/misurana</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Book Grid Layout -->
+    <div class="resume-grid">
+      
+      <!-- Left Column: Summary and Sample Poetry -->
+      <div class="grid-left">
+        
+        <!-- Anthology Summary -->
+        <div class="section-title"><i class="fa-solid fa-feather"></i> Anthology Overview</div>
+        <p class="summary-text">
+          <em>Kuchh Bhi</em> (कुछ भी) is a raw, soulful digital compilation of original Hindi poetry and prose written and curated by Mukesh Rana under the literary pen name <strong>Misu</strong>. It maps the silent conflicts, school nostalgia, heartbreak, and quiet resilience of the human spirit. Using elegant Devnagari scripts and romanized phonetics, the anthology invites readers to explore emotional and rhythmic storytelling.
+        </p>
+        
+        <!-- Selected Verses -->
+        <div class="section-title"><i class="fa-solid fa-quote-left"></i> Selected Verses (चुनिंदा कविताएं)</div>
+        
+        <!-- Poem 1 -->
+        <div class="resume-block">
+          <div class="block-header">
+            <div>
+              <h3 class="block-title">पाठशाला (School Memories)</h3>
+              <span class="block-subtitle">Original verse on childhood memories and school life</span>
+            </div>
+            <span class="block-date">Page 16</span>
+          </div>
+          <ul class="block-content">
+            <li>"बचपन में बस्ता उठाया कंधों में,"</li>
+            <li>"पूरा दिन बीत गया फूलों की सुगंधों में,"</li>
+            <li>"कहाँ गया था पूछता है रास्ते में लाला,"</li>
+            <li>"मैंने बोला गया था मैं पाठशाला।"</li>
+            <li>"दौड़ते दौड़ते मेरे पैरों में पड़ गया छाला,"</li>
+            <li>"पर मैं पहुँच गया पाठशाला।"</li>
+          </ul>
+        </div>
+        
+        <!-- Poem 2 -->
+        <div class="resume-block">
+          <div class="block-header">
+            <div>
+              <h3 class="block-title">आगे बढ़ते गए (Resilience & Journey)</h3>
+              <span class="block-subtitle">Prose on determination, moving forward, and life's paths</span>
+            </div>
+            <span class="block-date">Page 13</span>
+          </div>
+          <ul class="block-content">
+            <li>"बचपन में माँ-बाप ने चलना सिखाया था,"</li>
+            <li>"उँगली पकड़ के भविष्य का रास्ता दिखाया था,"</li>
+            <li>"आगे आने वाले पत्थरों पर भी हम चढ़ते गए,"</li>
+            <li>"पीछे मुड़कर नहीं देखा आगे बढ़ते गए।"</li>
+            <li>"रास्तों पर दिखे कुछ सुंदर मोड़,"</li>
+            <li>"सामान के साथ-साथ चैन चुरा ले गए चोर,"</li>
+            <li>"पर हम तो ऐसे ही चलते गए,"</li>
+            <li>"पीछे मुड़कर नहीं देखा आगे बढ़ते गए।"</li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- Right Column: Specs and Metadata -->
+      <div class="grid-right">
+        
+        <!-- Specifications -->
+        <div class="section-title"><i class="fa-solid fa-list"></i> Specifications</div>
+        
+        <!-- Spec 1 -->
+        <div class="resume-block">
+          <div class="block-header">
+            <div>
+              <h3 class="block-title" style="font-size: 15px;">Digital Edition</h3>
+              <span class="block-subtitle" style="font-size: 12px;">High-Quality PDF</span>
+            </div>
+          </div>
+          <span class="block-date" style="font-size: 10px;">Format | PDF</span>
+          <p style="font-size: 13px; color: var(--text-sec); margin-top: 5px;">A beautifully typeset print-ready version hosting original poetry collection drafts.</p>
+        </div>
+        
+        <!-- Spec 2 -->
+        <div class="resume-block">
+          <div class="block-header">
+            <div>
+              <h3 class="block-title" style="font-size: 15px;">Language & Script</h3>
+              <span class="block-subtitle" style="font-size: 12px;">Devnagari & Romanised Hindi</span>
+            </div>
+          </div>
+          <span class="block-date" style="font-size: 10px;">Phonetics | Hindi</span>
+          <p style="font-size: 13px; color: var(--text-sec); margin-top: 5px;">Written in standard Devnagari alongside transliterated phonetics to bridge cultural reading preferences.</p>
+        </div>
+        
+        <!-- Themes -->
+        <div class="section-title"><i class="fa-solid fa-tags"></i> Writing Themes</div>
+        <div class="skills-section-grid">
+          
+          <div class="skill-category">
+            <div class="skill-category-title">Core Poetry</div>
+            <div class="skill-list">
+              <span class="skill-badge">Nostalgia</span>
+              <span class="skill-badge">Romance</span>
+              <span class="skill-badge">Heartbreak</span>
+              <span class="skill-badge">Quiet Hope</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-category-title">Prose & Script</div>
+            <div class="skill-list">
+              <span class="skill-badge">Hindi Prose</span>
+              <span class="skill-badge">Devnagari</span>
+              <span class="skill-badge">Romanized Script</span>
+              <span class="skill-badge">Free Verse</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="skill-category-title">B2B Application</div>
+            <div class="skill-list">
+              <span class="skill-badge">Narrative EQ</span>
+              <span class="skill-badge">Empathy</span>
+              <span class="skill-badge">Creative Writing</span>
+              <span class="skill-badge">Communication</span>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Projects Integration -->
+        <div style="margin-top: 30px;" class="section-title"><i class="fa-solid fa-globe"></i> Digital Integrations</div>
+        <div class="resume-block">
+          <strong style="display:block; color: var(--cream); font-size:14px;">Anthology Repository</strong>
+          <p style="font-size: 13px; color: var(--text-sec); margin-top: 4px;">Houses poetry markdown source drafts and Python indexing scrapers on GitHub.</p>
+        </div>
+        <div class="resume-block">
+          <strong style="display:block; color: var(--cream); font-size:14px;">Magazine UI Interface</strong>
+          <p style="font-size: 13px; color: var(--text-sec); margin-top: 4px;">React page-turning magazine viewer designed for live web catalog reading.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+
+</body>
+</html>

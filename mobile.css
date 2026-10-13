@@ -1,0 +1,471 @@
+/*
+  mobile.css — Full Mobile & Tablet Responsiveness for 1mr.in
+  Covers: index.html (store), checkout.html, profile.html, auth.html, legal pages
+  Breakpoints: 768px (tablet), 480px (mobile), 380px (small mobile)
+*/
+
+/* ══════════════════════════════════════════════
+   1. GLOBAL — touches all pages
+══════════════════════════════════════════════ */
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-follower { display: none !important; }
+  body { cursor: auto !important; }
+}
+
+/* Prevent horizontal overflow on every page */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ══════════════════════════════════════════════
+   2. NAVIGATION (index.html header / nav)
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Tighter nav padding */
+  .nav-container {
+    padding: 0 20px !important;
+  }
+
+  /* Nav actions — keep auth + bag visible, hide text labels */
+  .nav-actions {
+    gap: 10px !important;
+  }
+
+  /* Shrink CTA button on mobile */
+  .cta-button {
+    padding: 10px 16px !important;
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  /* Hide the desktop nav links — mobile dropdown handles it */
+  .nav-links {
+    position: fixed !important;
+    top: var(--header-height, 80px) !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(3,3,3,0.97) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 24px 20px !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    display: none !important;
+    z-index: 200 !important;
+  }
+
+  .nav-links.active { display: flex !important; }
+
+  .nav-links li a {
+    font-size: 14px !important;
+    padding: 14px 0 !important;
+    display: block !important;
+    border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+    letter-spacing: 2px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container { padding: 0 16px !important; }
+}
+
+/* ══════════════════════════════════════════════
+   3. HERO SECTION — index.html
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  #hero {
+    padding: 100px 20px 60px !important;
+    min-height: auto !important;
+  }
+
+  .hero-wrapper {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    text-align: left !important;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 10vw, 70px) !important;
+    line-height: 1.0 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .hero-desc {
+    font-size: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .hero-buttons .cta-button,
+  .hero-buttons .sec-button {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 14px 20px !important;
+    font-size: 10px !important;
+  }
+
+  .scroll-indicator { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  #hero { padding: 88px 16px 48px !important; }
+  .hero-title { font-size: clamp(32px, 11vw, 52px) !important; }
+}
+
+/* ══════════════════════════════════════════════
+   4. CONTENT WRAPPER padding
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 0 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   5. STORE SECTION — filter bar, product grid
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Filter bar — stack vertically */
+  .filter-bar-card {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  /* Category filter tabs — horizontal scroll */
+  .filter-tabs-row {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding-bottom: 4px !important;
+    gap: 8px !important;
+    display: flex !important;
+    scrollbar-width: none !important;
+  }
+  .filter-tabs-row::-webkit-scrollbar { display: none !important; }
+
+  /* Select dropdowns — 2 per row */
+  .filter-selects-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .filter-select {
+    width: 100% !important;
+    font-size: 11px !important;
+  }
+
+  /* Search bar full width */
+  .search-bar-wrap {
+    width: 100% !important;
+  }
+  .search-bar-wrap input {
+    width: 100% !important;
+  }
+
+  /* Products grid — 1 column on mobile */
+  .products-grid,
+  #products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Trust badges — 2 per row */
+  .trust-badges-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .trust-badge-card {
+    padding: 14px 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Products grid — full single column with less gap */
+  .products-grid,
+  #products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Product card image height smaller */
+  .product-img-wrapper {
+    height: 180px !important;
+  }
+
+  /* Cart toast */
+  .toast-container {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 16px !important;
+    max-width: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   6. SHOPPING CART DRAWER
+══════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  .cart-drawer {
+    width: 100vw !important;
+    right: -100vw !important;
+  }
+  .cart-drawer.active { right: 0 !important; }
+  .cart-header,
+  .cart-items-list,
+  .cart-footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   7. CHECKOUT PAGE
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Two-column checkout → single column */
+  .checkout-layout,
+  .checkout-grid,
+  [class*="checkout"] > .grid,
+  .checkout-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  /* Make left panel (form) appear first, summary second */
+  .checkout-left { order: 2 !important; }
+  .checkout-right,
+  .order-summary-panel { order: 1 !important; }
+
+  /* Step indicator text */
+  .step-label {
+    display: none !important;
+  }
+
+  /* Form rows inside checkout — single column */
+  .form-grid-2,
+  .billing-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.checkout-page,
+  .checkout-page body {
+    padding: 0 !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   8. PROFILE PAGE
+══════════════════════════════════════════════ */
+
+@media (max-width: 700px) {
+  /* Profile sidebar + main → stack */
+  .page-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 20px 16px 60px !important;
+    gap: 20px !important;
+  }
+
+  /* Form rows → 1 column */
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Order rows → wrap */
+  .order-row {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .order-amt { margin-left: auto !important; }
+}
+
+/* ══════════════════════════════════════════════
+   9. AUTH PAGE
+══════════════════════════════════════════════ */
+
+@media (max-width: 480px) {
+  /* Auth card — full width */
+  .container {
+    padding: 0 12px !important;
+  }
+  .card {
+    padding: 24px 16px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   10. LEGAL PAGES (privacy, terms, refund)
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Nav padding */
+  nav {
+    padding: 14px 20px !important;
+  }
+
+  /* Page content */
+  .page {
+    padding: 40px 20px 60px !important;
+  }
+
+  /* Section heading */
+  .doc-section h2 {
+    font-size: 15px !important;
+  }
+
+  p, ul li {
+    font-size: 14px !important;
+  }
+
+  /* Refund table scrollable */
+  .quick-table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page { padding: 32px 16px 48px !important; }
+  h1 { font-size: 26px !important; }
+}
+
+/* ══════════════════════════════════════════════
+   11. FOOTER — index.html
+══════════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  footer {
+    padding: 28px 16px !important;
+  }
+
+  /* Legal link pills — wrap tightly */
+  footer > div[style] {
+    gap: 6px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   12. GENERAL SECTION PADDING
+══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  #about, #experience, #projects, #sandbox, #book, #resume {
+    padding: 60px 20px !important;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 7vw, 44px) !important;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bento-col-4,
+  .bento-col-8,
+  .bento-col-12 {
+    grid-column: span 1 !important;
+  }
+
+  .bento-item {
+    padding: 28px 20px !important;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr !important;
+  }
+
+  .exp-card.featured {
+    grid-column: span 1 !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sandbox-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sandbox-visualizer {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #about, #experience, #projects, #sandbox, #book, #resume {
+    padding: 48px 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   13. TOUCH TARGETS — minimum 44×44px
+══════════════════════════════════════════════ */
+
+@media (pointer: coarse) {
+  .product-btn,
+  .cta-button,
+  .sec-button,
+  .btn-submit,
+  .tab-btn,
+  .sidebar-tab,
+  .btn-primary,
+  .filter-tab,
+  .nav-links li a,
+  .cart-item-remove,
+  .circle-card-btn {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   14. FOCUS STYLES for keyboard / tab nav
+══════════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid #a855f7 !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}

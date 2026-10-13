@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+  <!-- iOS Web App Compatibility -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Mukesh Rana">
+  <link rel="apple-touch-icon" href="assets/avatar.jpg">
+
+  <!-- Android Chrome & PWA Integration -->
+  <meta name="theme-color" content="#030303">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Google Adsense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9324337196266024" crossorigin="anonymous"></script>
+
+  <!-- Primary SEO Tags -->
+  <title>Projects Archive | Mukesh Rana | Sales Executive, Noida</title>
+  <meta name="title" content="Projects Archive | Mukesh Rana | Sales Executive, Noida">
+  <meta name="description" content="A comprehensive dedicated archive of Mukesh Rana's client-side utility applications, web crawlers, and copywriting scratchpads.">
+  <meta name="author" content="Mukesh Rana">
+  <link rel="canonical" href="https://www.1mr.in/projects.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects Archive | Mukesh Rana | 1mr.in">
+  <meta property="og:description" content="A comprehensive dedicated archive of Mukesh Rana's client-side utility applications, web crawlers, and copywriting scratchpads.">
+  <meta property="og:url" content="https://www.1mr.in/projects.html">
+  <meta property="og:image" content="https://www.1mr.in/assets/og-image.jpg">
+
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  
+  <!-- Icon Libraries (Boxicons & FontAwesome) -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Preloading Heavy Resources -->
+  <link rel="preload" href="https://prod.spline.design/5qSsz4N1D0rCg90K/scene.splinecode" as="fetch" crossorigin>
+  
+  <!-- Three.js CDN Library (For highly reliable instant 3D WebGL fallback background) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Spline Web Component CDN Library -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+
+
+  <!-- Background Fallback Gradient -->
+  <div class="spline-fallback" id="spline-fallback">
+    <div class="fallback-glow"></div>
+  </div>
+
+  <!-- Instant Three.js Interactive 3D WebGL Gold Particle Field Background -->
+  <div class="three-bg" id="three-bg"></div>
+
+  <!-- Main Background 3D Spline Scene -->
+  <div class="spline-bg" id="spline-bg">
+    <spline-viewer url="https://prod.spline.design/5qSsz4N1D0rCg90K/scene.splinecode" events-target="global" style="width:100%; height:100%;"></spline-viewer>
+  </div>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="bx bx-cube-alt text-gold"></i> MUKESH<span>RANA</span>
+      </a>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-store" style="font-size:9px; margin-right:4px;"></i> Store</a></li>
+        <li><a href="profile.html#hero">Home</a></li>
+        <li><a href="profile.html#experience">Career</a></li>
+        <li><a href="#projects" class="active">Projects</a></li>
+        <li><a href="profile.html#book">My Book</a></li>
+        <li><a href="profile.html#resume">Resume</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="assets/MUKESH_RANA_RESUME.pdf" download="Mukesh_Rana_Resume.pdf" class="cta-button">
+          Get My CV <i class="bx bx-download"></i>
+        </a>
+      </div>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+        <i class="bx bx-menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- INTERFACE MAIN --- -->
+  <main class="content-wrapper">
+
+    <!-- --- SUBPAGE HERO BANNER --- -->
+    <section id="projects-hero">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="active-pulse"></span> Portfolio Sandbox
+        </div>
+        <h1 class="hero-title text-gradient">
+          UTILITY <br>
+          <span class="text-gold font-serif-italic">ARCHIVE.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Dedicated Client-Side Scrapers, Web Crawlers & Productivity Scaffolding
+        </p>
+        <p class="hero-desc">
+          Explore the full ecosystem of specialized static calculators, copywriting scratchpads, dimensions converters, and audio transcription helpers built for daily automation and technical exploration.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="cta-button">
+            View All Projects <i class="bx bx-chevron-down"></i>
+          </a>
+          <a href="index.html" class="sec-button">
+            Back To Home <i class="bx bx-left-arrow-alt"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- ALL PROJECTS GRID --- -->
+    <section id="projects" style="padding-top: 60px;">
+      <div class="section-header reveal">
+        <div>
+          <span class="section-label">Web Sandbox Library</span>
+          <h2 class="section-title text-gradient">All <em>Utilities</em></h2>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Tool 1: DesiCode -->
+        <div class="project-card glass-card tilt-card reveal">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">01</span>
+            <div class="project-tags">
+              <span class="project-tag">HTML/CSS</span>
+              <span class="project-tag">Toolbox</span>
+            </div>
+            <h3 class="project-title text-gradient">DesiCode</h3>
+            <p class="project-desc">
+              A comprehensive utility suite designed to assist developers in generating code segments and testing visual properties on the fly.
+            </p>
+            <a href="./desicode.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 2: FreeChat API -->
+        <div class="project-card glass-card tilt-card reveal reveal-delay-1">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">02</span>
+            <div class="project-tags">
+              <span class="project-tag">API Tool</span>
+              <span class="project-tag">Chat Router</span>
+            </div>
+            <h3 class="project-title text-gradient">FreeChat API</h3>
+            <p class="project-desc">
+              A lightweight chat interface utility providing rapid endpoint routing and instant communication scaffolding.
+            </p>
+            <a href="./freechat-api.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 3: ZoomScribe -->
+        <div class="project-card glass-card tilt-card reveal">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">03</span>
+            <div class="project-tags">
+              <span class="project-tag">Audio</span>
+              <span class="project-tag">Transcriber</span>
+            </div>
+            <h3 class="project-title text-gradient">ZoomScribe</h3>
+            <p class="project-desc">
+              A specialized static helper designed to process meet notes, transcript overlays, and format meeting audio records.
+            </p>
+            <a href="./zoomscribe.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 4: LinkRas -->
+        <div class="project-card glass-card tilt-card reveal reveal-delay-1">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">04</span>
+            <div class="project-tags">
+              <span class="project-tag">Bio Links</span>
+              <span class="project-tag">Redirections</span>
+            </div>
+            <h3 class="project-title text-gradient">LinkRas</h3>
+            <p class="project-desc">
+              A premium, lightweight social redirect platform built to host, catalog, and secure landing links.
+            </p>
+            <a href="./linkras.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 5: NoteCalc -->
+        <div class="project-card glass-card tilt-card reveal">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">05</span>
+            <div class="project-tags">
+              <span class="project-tag">Notebook</span>
+              <span class="project-tag">Calculator</span>
+            </div>
+            <h3 class="project-title text-gradient">NoteCalc</h3>
+            <p class="project-desc">
+              An intelligent notebook-integrated calculator designed to execute arithmetic lines inline with notes.
+            </p>
+            <a href="./notecalc.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 6: Market Research Scraper -->
+        <div class="project-card glass-card tilt-card reveal reveal-delay-1">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">06</span>
+            <div class="project-tags">
+              <span class="project-tag">Web Crawler</span>
+              <span class="project-tag">Data Miner</span>
+            </div>
+            <h3 class="project-title text-gradient">Research Scraper</h3>
+            <p class="project-desc">
+              A client-side static crawler built to assist sales mapping by rapidly compiling research queries.
+            </p>
+            <a href="./market-research-scraper.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 7: ResPic -->
+        <div class="project-card glass-card tilt-card reveal">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">07</span>
+            <div class="project-tags">
+              <span class="project-tag">Graphics</span>
+              <span class="project-tag">Image Resizer</span>
+            </div>
+            <h3 class="project-title text-gradient">ResPic</h3>
+            <p class="project-desc">
+              A lightweight, high-performance offline image dimensions resizer and format converter tool.
+            </p>
+            <a href="./respic.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 8: Kuch Bhi -->
+        <div class="project-card glass-card tilt-card reveal reveal-delay-1">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">08</span>
+            <div class="project-tags">
+              <span class="project-tag">Creative Board</span>
+              <span class="project-tag">Text Canvas</span>
+            </div>
+            <h3 class="project-title text-gradient">Kuch Bhi</h3>
+            <p class="project-desc">
+              An open-canvas text scratchpad for rapid, seamless formatting and copywriting.
+            </p>
+            <a href="./kuch-bhi.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tool 9: SpeakToCopy -->
+        <div class="project-card glass-card tilt-card reveal">
+          <div class="card-shine"></div>
+          <div class="project-bg-mesh"></div>
+          <div class="project-content">
+            <span class="project-num">09</span>
+            <div class="project-tags">
+              <span class="project-tag">Voice</span>
+              <span class="project-tag">Transcriber</span>
+            </div>
+            <h3 class="project-title text-gradient">SpeakToCopy</h3>
+            <p class="project-desc">
+              A fast and intuitive speech-to-text utility to directly capture and copy audio to your clipboard.
+            </p>
+            <a href="./speaktocopy.html" class="project-link">
+              Launch Utility <i class="bx bx-right-arrow-alt"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="gold-divider" style="margin-top: 60px;"></div>
+
+    <!-- --- FOOTER --- -->
+    <footer>
+      <p>&copy; 2026 Mukesh Rana. All rights reserved. Alumni <span class="footer-gold">IHM Pusa</span>.</p>
+      <div>1mr.in — Curated with <span class="footer-gold">Obsidian & Gold</span></div>
+    </footer>
+
+  </main>
+
+  <!-- --- ACCESSIBILITY / PERFORMANCE SETTINGS PANEL --- -->
+  <button class="dev-console-trigger" id="dev-console-trigger" aria-label="Open Performance Settings Panel">
+    <i class="bx bx-cog"></i>
+  </button>
+
+  <div class="glass-card dev-console" id="dev-console">
+    <div class="console-header">
+      <div class="console-title">
+        <i class="bx bx-adjust"></i> Dev Center Console
+      </div>
+    </div>
+
+    <!-- Theme Customization swatches -->
+    <div>
+      <div class="console-label" style="margin-bottom: 8px;">Accent Selection</div>
+      <div class="theme-swatch-group">
+        <div class="theme-swatch swatch-purple active" data-theme="purple" title="Brilliant Gold"></div>
+        <div class="theme-swatch swatch-emerald" data-theme="emerald" title="Champagne Silver"></div>
+        <div class="theme-swatch swatch-volcanic" data-theme="volcanic" title="Volcanic Amber"></div>
+      </div>
+    </div>
+
+    <!-- Optimization Toggles -->
+    <div class="console-row" style="margin-top: 10px;">
+      <span class="console-label">Render 3D Space Background</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-3d" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="console-row">
+      <span class="console-label">Custom Magnetic Cursor</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-cursor" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="console-row">
+      <span class="console-label">Motion Animations</span>
+      <label class="switch">
+        <input type="checkbox" id="toggle-motion" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Custom Spline scene import box -->
+    <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 14px;">
+      <span class="console-label">Load Custom Spline Background URL</span>
+      <input type="text" class="console-input" id="custom-spline-url" placeholder="Paste your prod.splinecode URL..." autocomplete="off">
+    </div>
+  </div>
+
+  <!-- Main scripts execution -->
+  <script type="module" src="app.js"></script>
+
+  <!-- Auto-detect script values immediately -->
+  <script>
+    // Processor thread detection
+    const threads = navigator.hardwareConcurrency || 'N/A';
+    const threadsEl = document.getElementById('sys-threads');
+    if (threadsEl) {
+      threadsEl.innerHTML = `<i class="fa-solid fa-microchip"></i> ${threads} Cores`;
+    }
+    
+    // Viewport DPI
+    const dpi = window.devicePixelRatio ? Math.round(window.devicePixelRatio * 96) : 96;
+    const dpiEl = document.getElementById('sys-dpi');
+    if (dpiEl) {
+      dpiEl.innerHTML = `<i class="fa-solid fa-display"></i> ${dpi} DPI`;
+    }
+  </script>
+</body>
+</html>
